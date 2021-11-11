@@ -7,7 +7,7 @@ document.getElementById("put").onclick = function () {postData(document.getEleme
 
 async function getData(petid) {
     var id = petid;
-    let url = new URL('https://petstore3.swagger.io/api/v3/pet/'+petid);
+    let url = new URL('https://petstore3.swagger.io/api/v3/pet/'+id);
     try {
         const response = await fetch(url);
 
@@ -20,7 +20,7 @@ async function getData(petid) {
         document.getElementById("data").innerText = JSON.stringify(data);
         document.getElementById("putpet").value = JSON.stringify(data);
     } catch (error) {
-
+        console.log('Error: ' + error);
     }
 }
 
